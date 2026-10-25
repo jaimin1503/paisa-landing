@@ -1,0 +1,31 @@
+---
+import Layout from './Layout.astro';
+
+const { frontmatter } = Astro.props;
+---
+<Layout title={frontmatter.title} description={frontmatter.description}>
+  <main class="policy">
+    <a class="back" href="/">← Back to Paisa</a>
+    <article><slot /></article>
+  </main>
+</Layout>
+
+<style>
+  .policy { max-width: 760px; margin: auto; padding: 64px 24px 96px; }
+  .back { display: inline-block; margin-bottom: 40px; color: var(--primary-deep); font-size: 14px; text-underline-offset: 4px; }
+  article :global(h1) { margin-bottom: 28px; font-size: clamp(2.4rem, 6vw, 3.6rem); }
+  article :global(h2) { margin: 48px 0 16px; font-size: 1.75rem; }
+  article :global(p), article :global(li) { color: var(--muted); font-size: 16px; line-height: 1.65; }
+  article :global(p) { margin-bottom: 16px; }
+  article :global(strong) { color: var(--text); font-weight: 500; }
+  article :global(ul) { margin: 0 0 16px; padding-left: 20px; }
+  article :global(li) { margin-bottom: 8px; }
+  article :global(a) { color: var(--primary-deep); text-underline-offset: 3px; }
+  article :global(code) { font-size: .9em; }
+  article :global(table) { width: 100%; margin: 8px 0 16px; border-collapse: collapse; font-size: 15px; }
+  article :global(th), article :global(td) { padding: 12px 12px 12px 0; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+  article :global(th) { font-weight: 500; }
+  article :global(td) { color: var(--muted); }
+  article :global(td:first-child) { color: var(--text); white-space: nowrap; }
+  @media (max-width: 520px) { .policy { padding: 40px 20px 72px; } article :global(td:first-child) { white-space: normal; } }
+</style>

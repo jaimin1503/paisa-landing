@@ -9,7 +9,9 @@ Built with [Astro](https://astro.build).
 ```text
 src/
 ├── layouts/Layout.astro   # <head>, meta tags, Open Graph
-└── pages/index.astro      # Whole page: hero, beta steps, features, gallery, privacy, FAQ
+├── layouts/Policy.astro   # Wrapper and styles for the privacy policy
+├── pages/index.astro      # Whole page: hero, beta steps, features, gallery, privacy, FAQ
+└── pages/privacy-policy.md  # Privacy policy, served at /privacy-policy
 public/                    # App icon, screenshots, feature graphic
 ```
 
@@ -27,6 +29,6 @@ Images in `public/` are copies of `store/play/` in the [jaimin1503/paisa](https:
 ## Links
 
 - Beta tester group: https://groups.google.com/g/ravenroll-testers/about
-- Privacy policy: https://jaimin1503.github.io/paisa/privacy-policy
+- Privacy policy: `/privacy-policy` on this site (source: `src/pages/privacy-policy.md`)
 - Contact: jaiminviramgama152@gmail.com
 # paisa-landing
